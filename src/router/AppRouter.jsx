@@ -1,17 +1,18 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+ 
 import Login from "../pages/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
 import About from "../pages/About";
-import NotFound from "../pages/NotFound";
 import Navbar from "../components/Navbar";
+
 
 const AppRouter = () => {
   return (
-    // <BrowserRouter>
-    <>
-      <Navbar />
+    
+    <BrowserRouter> 
+    <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
@@ -19,9 +20,8 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
-    // </BrowserRouter>
-  );
-};
+    </BrowserRouter>
+  )
+}
 
 export default AppRouter;

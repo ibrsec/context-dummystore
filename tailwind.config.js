@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        main:"#FEAF00",
+        main:"#ab99c3",
         navbarColor:"#f2eae1",
-        white:"#6c6c6c",
+        labelColor:"#6c6c6c",
         white:"#FFF",
       },
       fontFamily:{

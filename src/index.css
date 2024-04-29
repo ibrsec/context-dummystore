@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
+@layer components {
   .loginDiv {
-    background: linear-gradient(71deg, #feaf00 19.35%, #f8d442 90.12%);
+    background: rgb(25,15,34);
+background: linear-gradient(110deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, rgba(74,80,106,1) 62%, rgba(171,153,195,1) 100%);
     @apply flex justify-center items-center min-h-screen;
   }
-  .login-input {
+  .loginInput{
     height: 44px;
     border-radius: 4px;
     border: 1px solid #e5e5e5;
-    padding: 0.6rem;
-    @apply focus:outline-main focus:caret-main;
+    padding: .6rem ;
+
+    @apply focus:outline-main focus:caret-main ;
   }
-  .login-input::placeholder {
+  .loginInput::placeholder{
     color: #cdcdcd;
     @apply font-montserrat text-[12px] font-[400];
   }
-} */
+}
+
+
+.active{
+  color:darkolivegreen;
+  padding-bottom: 3px;
+  border-bottom: 1px solid darkgreen;
+}
