@@ -22,9 +22,12 @@ background: linear-gradient(110deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, 
   }
 }
 
+.navlinks a{
+  padding: 6px 14px;
 
+  border-radius: 10px;
+}
 .active{
-  color:darkolivegreen;
-  padding-bottom: 3px;
-  border-bottom: 1px solid darkgreen;
+  color:black;
+  background-color: white;
 }
