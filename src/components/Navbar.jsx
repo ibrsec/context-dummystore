@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 const navbarLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Products", href: "/Products" },
+  { name: "Products", href: "/products" },
 ];
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
 
   const handleLogoutClick = () => {
-    const confirmLogout = alert("Logging out...!");
+     alert("Logging out...!");
     login({
       isLoginned: false,
       email: "",
@@ -23,11 +23,13 @@ const Navbar = () => {
     });
   };
   return (
-    <section className=" bg-cyan-900  ">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-12 py-5 ">
+    <section className="navbar-bg mx-0  ">
+      <div className="container-wrapper px-4 py-5   flex items-center justify-between  ">
         <div className=" ">
           <img src={logo} className="w-[70px]" alt="" />
         </div>
+
+         
         <div className=" navlinks    md:flex  flex-col md:flex-row  hidden    gap-3 py-4 px-5">
           {navbarLinks.map(({ name, href }) => (
             <NavLink key={name} className="text-white" to={href}>
@@ -35,7 +37,7 @@ const Navbar = () => {
             </NavLink>
           ))}
         </div>
-        
+ 
         <div className=" md:block   hidden">
           {user.isLoginned && (
             <NavLink
@@ -66,15 +68,28 @@ const Navbar = () => {
           )}
         </div>
       </div>
+
+      
       {show && (
-          <div className="navlinks   md:hidden  flex-col    flex    gap-3 py-4 px-5">
-            {navbarLinks.map(({ name, href }) => (
-              <NavLink key={name} className="text-white" to={href}>
-                {name}
+        <div className="navlinks   md:hidden  flex-col    flex    gap-3 py-4 px-5">
+          {navbarLinks.map(({ name, href }) => (
+            <NavLink key={name} className="text-white" to={href}>
+              {name}
+            </NavLink>
+          ))}
+          <div className=" md:hidden   ">
+            {user.isLoginned && (
+              <NavLink
+                className="text-white"
+                to="/login"
+                onClick={handleLogoutClick}
+              >
+                Logout
               </NavLink>
-            ))}
+            )}
           </div>
-        )}
+        </div>
+      )}
     </section>
   );
 };

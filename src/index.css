@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 @layer components {
   .loginDiv {
     background: rgb(25,15,34);
@@ -20,6 +27,9 @@ background: linear-gradient(110deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, 
     color: #cdcdcd;
     @apply font-montserrat text-[12px] font-[400];
   }
+  .container-wrapper{
+    @apply max-w-6xl mx-auto my-3 px-2 ;
+  }
 }
 
 .navlinks a{
@@ -27,7 +37,19 @@ background: linear-gradient(110deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, 
 
   border-radius: 10px;
 }
+
+.navlinks a:hover{ 
+
+  color:white;
+  background-color: darkslategrey;
+}
 .active{
   color:black;
   background-color: white;
+}
+
+
+.navbar-bg{
+  background: rgb(25,15,34);
+  background: linear-gradient(20deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, rgba(74,80,106,1) 62%, rgba(171,153,195,1) 100%);
 }

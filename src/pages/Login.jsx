@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,13 +8,13 @@ const Login = () => {
 
 const {login} = useAuthContext();
 
-const navigate = useNavigate();
-const location = useLocation(); 
+// const navigate = useNavigate();
+// const location = useLocation(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ email, password });
-    if (email === "admin@aa.com" && password === "admin") {
+    if (email === "admin@aa.com" && password === "xxxadminxxx") {
       //login();
       login({
         isLoginned:true,
@@ -29,10 +29,10 @@ const location = useLocation();
   };
 
   const handleDoubleClick = (e) => {
-    if (e.target.type == "email") {
+    if (e.target.type === "email") {
       setEmail("admin@aa.com");
-    }else if(e.target.type=="password"){
-        setPassword("admin")
+    }else if(e.target.type === "password"){
+        setPassword("xxxadminxxx")
     }
   };
   return (
@@ -76,7 +76,7 @@ const location = useLocation();
           <div className="flex flex-col gap-2 ">
             <label
               htmlFor="password"
-              className=" font-montserrat text-label text-labelColor hover:cursor-pointer hover:after:content-['admin@aa.com'] hover:after:text-black hover:after:pl-3 hover:after:underline"
+              className=" font-montserrat text-label text-labelColor hover:cursor-pointer hover:after:content-['xxxadminxxx'] hover:after:text-black hover:after:pl-3 hover:after:underline"
             >
               Password
             </label>
