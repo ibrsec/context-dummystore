@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({item}) => {
     const navigate = useNavigate();
-    const {id,category,price,brand,images} = item;
+    const {id,category,price,brand,thumbnail,images} = item;
 
   return (
-    <div className="h-[400px] shadow-2xl rounded-xl cursor-pointer" onClick={()=>navigate(`/products/${id}`)}>
+    <div className="h-[400px] shadow-2xl rounded-xl cursor-pointer" onClick={()=>navigate(`/products/${id}`,{state:item})} >
         <div className="w-full h-3/4">
-      <img className="w-full h-full object-contain" src={images[0]} alt="" />
+      <img className="w-full h-full object-contain" src={thumbnail} alt="" />
         </div>
       <div className="px-2 py-2">
         <div className="flex items-center justify-between">

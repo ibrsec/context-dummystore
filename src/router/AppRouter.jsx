@@ -7,6 +7,7 @@ import About from "../pages/About";
 import Navbar from "../components/Navbar";
 import AuthProvider from "../context/AuthProvider";
 import PrivateRouter from "../pages/PrivateRouter";
+import ProductDetail from "../pages/ProductDetail";
 
 const AppRouter = () => {
   return (
@@ -15,8 +16,9 @@ const AppRouter = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<PrivateRouter />}>
-            <Route path="" element={<Home />} />
+            <Route path="home" element={<Home />} />
             <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<ProductDetail />} />
             <Route path="about" element={<About />} />
           </Route>
           <Route path="/login" element={<Login />} />

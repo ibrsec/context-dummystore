@@ -40,14 +40,14 @@ console.log(products);
         loading ? (
           <div className='flex flex-wrap'>
 
-          {[1,2,3,4,5,6]?.map(item=> <LoadingCard />)}
+          {[1,2,3,4,5,6]?.map((item,i)=> <LoadingCard key={i} />)}
           </div>
         
         )
         : products.length > 1 ?
       (<div className="py-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-5 grid-row">
 
-        {products?.map(item => <ProductCard item={item} />)}
+        {products?.map(item => <ProductCard key={item.id} item={item} />)}
         
       </div>)
       :
