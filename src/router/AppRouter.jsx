@@ -18,6 +18,7 @@ const AppRouter = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<PrivateRouter />}>
+              <Route path="" element={<Home />} />
               <Route path="home" element={<Home />} />
               <Route path="products" element={<Products />} />
               <Route path="products/:id" element={<ProductDetail />} />
