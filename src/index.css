@@ -28,7 +28,7 @@ background: linear-gradient(110deg, rgba(25,15,34,1) 17%, rgba(58,55,81,1) 47%, 
     @apply font-montserrat text-[12px] font-[400];
   }
   .container-wrapper{
-    @apply max-w-6xl mx-auto my-3 px-2 ;
+    @apply max-w-6xl mx-auto py-3 px-2 ;
   }
 }
 

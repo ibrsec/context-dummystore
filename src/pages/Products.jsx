@@ -1,40 +1,19 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import data from './datasil';
+
 import ProductCard from '../components/ProductCard';
 import LoadingCard from '../components/LoadingCard';
 import SearchInput from '../components/SearchInput';
+import { useProductsContext } from '../context/ProductsProvider';
+import Scroll from '../components/Scroll';
 const Products = () => {
 
+const {search,setSearch,products,loading} = useProductsContext();
 
-  const [products,setProducts] = useState([]);
-  const[loading,setLoading] = useState(false);
-  const [search,setSearch] = useState("");
 
-  const getProducts = async(searchValue) => {
-
-    try{
-      setLoading(true)
-      const response = await axios.get(`https://dummyjson.com/products/search?q=`+(searchValue || ""));
-      if(response.status !== 200){
-        throw new Error("Not 200 get products")
-      }
-      setProducts(response.data.products)
-    }catch(error){
-      console.log(error);
-    }finally{
-      setLoading(false)
-
-    }
-  }
-  useEffect(()=>{
-    // getProducts(search);
-    setProducts(data)
-  },[search])
-console.log(products);
   return (
+    <div className='relative'>
+    
     <div className='container-wrapper '>
-      <SearchInput search={search} setSearch={setSearch}/>
+      <SearchInput  />
       <h2 className='text-[#3E3E58] text-3xl font-semibold'>All Products</h2> 
         {
         loading ? (
@@ -53,6 +32,8 @@ console.log(products);
       :
       <h2 className='text-center text-red-500 text-3xl my-10'>No Products</h2>
         }
+    </div>
+    <Scroll/>
     </div>
   )
 }

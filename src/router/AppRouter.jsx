@@ -8,22 +8,25 @@ import Navbar from "../components/Navbar";
 import AuthProvider from "../context/AuthProvider";
 import PrivateRouter from "../pages/PrivateRouter";
 import ProductDetail from "../pages/ProductDetail";
+import ProductsProvider from "../context/ProductsProvider";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<PrivateRouter />}>
-            <Route path="home" element={<Home />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:id" element={<ProductDetail />} />
-            <Route path="about" element={<About />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ProductsProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<PrivateRouter />}>
+              <Route path="home" element={<Home />} />
+              <Route path="products" element={<Products />} />
+              <Route path="products/:id" element={<ProductDetail />} />
+              <Route path="about" element={<About />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ProductsProvider>
       </AuthProvider>
     </BrowserRouter>
   );

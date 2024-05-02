@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthProvider";
 import logo from "../assets/logo.png";
 
 const navbarLinks = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/home" },
   { name: "About", href: "/about" },
   { name: "Products", href: "/products" },
 ];

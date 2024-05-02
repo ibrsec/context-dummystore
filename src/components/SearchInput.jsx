@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useProductsContext } from "../context/ProductsProvider";
 
-const SearchInput = ({search,setSearch}) => {
+const SearchInput = () => {
+const {search,setSearch} = useProductsContext();
      
   return (
     <form className="border w-4/5 md:w-1/2 lg:w-2/5 mx-auto py-2 px-2 rounded-3xl">
