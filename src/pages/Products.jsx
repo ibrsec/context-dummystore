@@ -9,7 +9,7 @@ const Products = () => {
 
   const [products,setProducts] = useState([]);
   const[loading,setLoading] = useState(false);
-  const [searchValue,setSearchValue] = useState("");
+  const [search,setSearch] = useState("");
 
   const getProducts = async(searchValue) => {
 
@@ -28,13 +28,13 @@ const Products = () => {
     }
   }
   useEffect(()=>{
-    // getProducts(searchValue);
+    // getProducts(search);
     setProducts(data)
-  },[])
+  },[search])
 console.log(products);
   return (
     <div className='container-wrapper '>
-      <SearchInput />
+      <SearchInput search={search} setSearch={setSearch}/>
       <h2 className='text-[#3E3E58] text-3xl font-semibold'>All Products</h2> 
         {
         loading ? (
@@ -44,12 +44,14 @@ console.log(products);
           </div>
         
         )
-        :
+        : products.length > 1 ?
       (<div className="py-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-5 grid-row">
 
         {products?.map(item => <ProductCard item={item} />)}
         
       </div>)
+      :
+      <h2 className='text-center text-red-500 text-3xl my-10'>No Products</h2>
         }
     </div>
   )
