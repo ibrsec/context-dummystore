@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState,createContext, useContext } from 'react'
 import axios from 'axios';
-import data from '../pages/datasil'; 
+ 
 
 const ProductsContext = createContext();
 
@@ -29,8 +29,7 @@ const ProductsProvider = ({children}) => {
       }
     }
     useEffect(()=>{
-      getProducts(search);
-    //   setProducts(data)
+      getProducts(search); 
     },[search])
   console.log(products);
 
